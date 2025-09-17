@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Confirmação de Cadastro</title>
+    <style>
+        /* Reset básico */
+        body, p, a, span {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333333;
+        }
+        body {
+            background-color: #f4f6f8;
+            padding: 40px 20px;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+            padding: 30px 40px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            color: #555555;
+        }
+        .btn-confirm {
+            display: inline-block;
+            background-color: #2b8a3e;
+            color: white !important;
+            padding: 14px 28px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-confirm:hover {
+            background-color: #256d32;
+        }
+        .footer {
+            margin-top: 35px;
+            font-size: 13px;
+            color: #999999;
+            text-align: center;
+        }
+        .footer a {
+            color: #2b8a3e;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <h1>Olá, <span th:text="${nome}">Usuário</span>!</h1>
+    <p>
+        Obrigado por se cadastrar no nosso sistema. Para ativar sua conta, por favor, clique no botão abaixo para confirmar seu email:
+    </p>
+    <a class="btn-confirm" th:href="@{${linkConfirmacao}}" target="_blank" rel="noopener">Confirmar Conta</a>
+    <p>
+        Se você não realizou esse cadastro, por favor, ignore este email.
+    </p>
+    <div class="footer">
+        © 2025 Sua Empresa. Todos os direitos reservados.<br/>
+        <a href="https://www.suaempresa.com.br" target="_blank">www.suaempresa.com.br</a>
+    </div>
+</div>
+</body>
+</html>
